@@ -1,0 +1,518 @@
+@charset "UTF-8";
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+}
+
+button:focus {
+  outline: none;
+}
+
+.pre-loader {
+  display: -ms-grid;
+  display: grid;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: visible;
+  /* z-index:stacks one on each other based on value  */
+  z-index: 999;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: whitesmoke;
+}
+
+.hidePreLoader {
+  /* z-index:stacks one on each other based on value  */
+  z-index: -999;
+  visibility: hidden;
+}
+
+header nav .navbar-toggler-icon {
+  color: lightgreen;
+}
+
+header nav .nav-link {
+  color: #EF7998;
+  font-size: 1.3rem;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+header nav .nav-link:hover {
+  color: #d8d6d6;
+  border-bottom: 3px dotted goldenrod;
+}
+
+header nav .nav-info-items {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.1rem;
+  color: rgba(64, 172, 241, 0.7) !important;
+}
+
+#banner {
+  background: url(./Banner-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#banner .min-height {
+  min-height: 100vh;
+}
+
+#about .height-80 {
+  min-height: 50vh;
+}
+
+#about .about-image {
+  background: url(./my_logo.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#about .underline {
+  width: 120px;
+  height: .4rem;
+}
+
+#about-one .style-text {
+  color: #EF7998;
+  font-family: 'Kaushan Script',cursive;
+  font-size: 3rem;
+}
+
+#about-one .image-container {
+  /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+  position: relative;
+}
+
+#about-one .image-container::before {
+  /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+  position: absolute;
+  content: '';
+  top: -1.5rem;
+  left: -1.7rem;
+  width: 100%;
+  height: 100%;
+  outline: 0.5rem solid #EF7998;
+  /* z-index:stacks one on each other based on value  */
+  z-index: -1;
+  -webkit-transition: all 2s linear;
+  transition: all 2s linear;
+}
+
+#about-one .image-container:hover::before {
+  top: 0;
+  left: 0;
+}
+
+#choose .style-title {
+  background-color: #EF7998;
+  color: #eeeeee;
+  padding: 0.5rem 2rem;
+  -webkit-clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+          clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+#services {
+  min-height: 100vh;
+  background: url(./Banner-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+#services .underline-service {
+  width: 150px;
+  height: .4rem;
+}
+
+#services .service-container {
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+#services .service-container .service-item {
+  /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+  position: relative;
+  padding: 60px;
+  overflow: hidden;
+}
+
+#services .service-container .service-item .front-text {
+  text-align: center;
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
+}
+
+#services .service-container .service-item .back-text {
+  /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+  position: absolute;
+  width: 75%;
+  margin: 0 auto;
+  height: 100%;
+  bottom: -15em;
+  padding: 30px 0;
+  -webkit-transition: bottom 2s;
+  transition: bottom 2s;
+}
+
+#services .service-container .service-item .back-text h3 {
+  margin-bottom: 15px;
+}
+
+#services .service-container .service-item:hover .front-text {
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px);
+}
+
+#services .service-container .service-item:hover .back-text {
+  bottom: 0;
+}
+
+#services .service-container .service-item-black {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7)));
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+#services .service-container .service-item-white {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(206, 208, 206, 0.6)), to(rgba(206, 208, 206, 0.6)));
+  background: linear-gradient(rgba(206, 208, 206, 0.6), rgba(206, 208, 206, 0.6));
+}
+
+@media screen and (min-width: 776px) {
+  .service-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    row-gap: 1em;
+    -webkit-column-gap: 1em;
+            column-gap: 1em;
+  }
+  .service-container .service-item:nth-of-type(1) {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .service-container .service-item:nth-of-type(2) {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .service-container .service-item:nth-of-type(3) {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  .service-container .service-item:nth-of-type(4) {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .service-container .service-item:nth-of-type(5) {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  .service-container .service-item:nth-of-type(6) {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .service-container .back-text {
+    height: 110%;
+    bottom: -15em;
+  }
+}
+
+#plans .underline-plans {
+  width: 160px;
+  height: .4rem;
+}
+
+#carousel .underline-carousel {
+  width: 120px;
+  height: .4rem;
+}
+
+#reviews .underline-review {
+  width: 120px;
+  height: .4rem;
+}
+
+#reviews .button-container .prev-btn, #reviews .button-container .next-btn {
+  border-color: transparent;
+  background-color: transparent;
+  color: #8bcbf9;
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  font-size: 2rem;
+  margin: 0 0.5rem;
+}
+
+#team .underline-team {
+  width: 250px;
+  height: .4rem;
+}
+
+#team .image {
+  width: 20%;
+  height: 7rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 70%;
+  margin-top: -40px;
+  margin-left: 40%;
+  /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+  position: relative;
+}
+
+#achievements .underline-work {
+  width: 170px;
+  height: .4rem;
+}
+
+#blog {
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+#blog .underline-blog {
+  width: 170px;
+  height: .4rem;
+}
+
+#blog .blogs-container {
+  max-width: 90vw;
+  margin: auto;
+}
+
+#blog .blogs-container .blog-item {
+  /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  color: whitesmoke;
+}
+
+#blog .blogs-container .blog-item img {
+  min-height: 100%;
+  width: 100%;
+  display: block;
+  -webkit-transition: -webkit-transform 4s;
+  transition: -webkit-transform 4s;
+  transition: transform 4s;
+  transition: transform 4s, -webkit-transform 4s;
+}
+
+#blog .blogs-container .blog-item .blogs-text {
+  /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  -webkit-transition: opacity 4s;
+  transition: opacity 4s;
+  opacity: 0;
+}
+
+#blog .blogs-container .blog-item .blogs-footer {
+  /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  bottom: 0;
+  left: 0;
+  font-size: 1.2rem;
+  color: #d8d6d6;
+  -webkit-transition: opacity 4s;
+  transition: opacity 4s;
+  opacity: 0;
+  width: 100%;
+}
+
+#blog .blogs-container .blog-item:hover img {
+  opacity: 0.4;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#blog .blogs-container .blog-item:hover .blogs-text {
+  opacity: 1;
+}
+
+#blog .blogs-container .blog-item:hover .blogs-footer {
+  opacity: 1;
+}
+
+@media screen and (min-width: 576px) {
+  .blogs-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 997px) {
+  .blogs-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+}
+
+#queries {
+  background-color: #f1f5f8;
+  color: #102a42;
+}
+
+#queries .underline-queries {
+  width: 330px;
+  height: .4rem;
+}
+
+#queries p {
+  margin-bottom: 1.25rem;
+  color: #617d98;
+}
+
+#queries .list-of-questions {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin-top: 5vh;
+}
+
+#queries .list-of-questions .question-section {
+  max-width: 620px;
+}
+
+#queries .list-of-questions .question-section .question {
+  background-color: white;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+#queries .list-of-questions .question-section .question .question-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 1rem;
+}
+
+#queries .list-of-questions .question-section .question .question-title p {
+  margin-bottom: 0;
+  letter-spacing: 0.25rem;
+  color: #102a42;
+}
+
+#queries .list-of-questions .question-section .question .question-title .question-button {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border-color: transparent;
+  color: #C59D5F;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+#queries .list-of-questions .question-section .question .question-title .question-button:hover {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+#queries .list-of-questions .question-section .question .answer-title {
+  padding: 1rem 0 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#queries .list-of-questions .question-section .question .answer-title p {
+  margin-bottom: 0;
+}
+
+.minus-icon, .answer-title {
+  display: none;
+}
+
+.show-answer .answer-title {
+  display: block;
+}
+
+.show-answer .plus-icon {
+  display: none;
+}
+
+.show-answer .minus-icon {
+  /* the default for span */
+  display: inline;
+}
+
+#contact .underline-contact {
+  width: 100px;
+  height: .4rem;
+}
+
+footer .underline-footer {
+  width: 100px;
+  height: .4rem;
+}
+/*# sourceMappingURL=style.css.map */

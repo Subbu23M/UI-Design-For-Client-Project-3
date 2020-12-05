@@ -1,0 +1,656 @@
+// Colors
+$blueColor:#4BACF1;
+$transparentBlueColor:rgba(64,172,241,0.7);
+$blackColor:#292F36;
+$greyColor:rgb(216,214,214);
+$yellowColor:#E3B585;
+$pinkColor:#EF7998;
+$mainYellowColor:rgb(249,228,148);
+$transparentYellowColor:rgba(249,228,148,0.5);
+$mainGreyColor:rgb(238,238,238);
+
+// Universal Effects
+body{
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    font-family: 'Open Sans', sans-serif;
+}
+
+button:focus{
+    outline: none;
+}
+
+// For pre-loader
+.pre-loader{
+    // Convert row into column
+    display: grid;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: visible;
+
+    /* z-index:stacks one on each other based on value  */
+    z-index: 999;
+
+    // On X-axis
+    justify-content: center;
+
+    // On Y-axis
+    align-items: center;
+
+    background-color: whitesmoke;
+}
+
+.hidePreLoader {
+    /* z-index:stacks one on each other based on value  */
+    z-index: -999;
+
+    visibility: hidden;
+}
+
+// Styles for nav
+header{
+    nav{
+        .navbar-toggler-icon{
+            color: lightgreen;
+        }
+
+        .nav-link{
+            color: $pinkColor;
+            font-size: 1.3rem;
+
+            // transition:Default Value Duration
+            // transition-timing-function:ease-in-out:Specifies a transition effect with a slow start and end
+            transition: all 2s ease-in-out;
+        }
+
+        .nav-link:hover{
+            color: $greyColor;
+
+            // border-bottom:size style color;
+            border-bottom: 3px dotted goldenrod;
+        }
+
+        .nav-info-items{
+            font-family: 'Kaushan Script', cursive;
+            font-size: 1.1rem;
+            color: $transparentBlueColor!important;
+        }
+    }
+}
+
+// For Banner Section
+
+#banner{
+    .min-height{
+        min-height: 100vh;
+    }
+
+    background: url(./Banner-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    // If we use cover, it will cut off the sides of the image, preserving the aspect ratio, and also filling in the space.
+    background-size: cover;
+
+    // Parallax Effects
+    background-attachment: fixed;
+}
+
+// For About section
+#about{
+    .height-80{
+        min-height: 50vh;
+    }
+
+    .about-image{
+    background: url(./my_logo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    // If we use cover, it will cut off the sides of the image, preserving the aspect ratio, and also filling in the space.
+    background-size: cover;
+
+    // Parallax Effects
+    background-attachment: fixed;
+    }
+    .underline{
+        width: 120px;
+        height: .4rem;
+    }
+}
+
+#about-one{
+
+    .style-text{
+        color: $pinkColor;
+        font-family: 'Kaushan Script',cursive;
+        font-size: 3rem;
+    }
+
+    .image-container{
+        /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+        position: relative;
+    }
+
+    .image-container::before{
+        /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+        position: absolute;
+
+        content: '';
+
+        top: -1.5rem;
+        left: -1.7rem;
+
+        width: 100%;
+        height: 100%;
+
+        // outline:size style color
+        outline: 0.5rem solid $pinkColor;
+
+        /* z-index:stacks one on each other based on value  */
+        z-index: -1;
+
+        // transition:Property duration
+        // transition-timing-function:linear - specifies a transition effect with the same speed from start to end.
+        transition: all 2s linear;
+    }
+    .image-container:hover::before{
+        top: 0;
+        left: 0;
+    }
+}
+
+// Why Choose Us
+
+#choose{
+    .style-title{
+        background-color: $pinkColor;
+        color: $mainGreyColor;
+
+        // padding:top & bottom left & right
+        padding: 0.5rem 2rem;
+
+        clip-path: polygon(10% 0,100% 0,90% 100%,0 100%);
+    }
+}
+
+// For Services
+#services{
+    .underline-service{
+        width: 150px;
+        height: .4rem;
+    }
+
+    // On Y-axis
+    min-height: 100vh;
+
+    background: url(./Banner-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    // If we use cover, it will cut off the sides of the image, preserving the aspect ratio, and also filling in the space.
+    background-size: cover;
+
+    // Parallax Affects
+    background-attachment: fixed;
+
+    padding-top: 20px;
+    padding-bottom: 80px;
+
+    .service-container{
+        max-width: 90vw;
+        margin: 0 auto;
+
+        .service-item{
+            /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+            position: relative;
+
+            padding:60px;
+            overflow: hidden;
+
+            .front-text{
+                text-align: center;
+
+                // transition:property duration
+                transition: transform 2s;
+            }
+
+            .back-text{
+                /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+                position: absolute;
+
+                width: 75%;
+                margin: 0 auto;
+                height: 100%;
+                bottom: -15em;
+
+                // padding:top & bottom left & right
+                padding: 30px 0;
+
+                // transition:property duration
+                transition: bottom 2s;
+
+                h3{
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .service-item:hover{
+            .front-text{
+                transform: translateY(-200px);
+            }
+            .back-text{
+                bottom: 0;
+            }
+        }
+
+        .service-item-black{
+            // By Default : Moves Top to Bottom
+            background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+        }
+
+        .service-item-white {
+            // Default Value: Top to Bottom
+            background: linear-gradient(rgba(206, 208, 206, 0.6), rgba(206, 208, 206, 0.6));
+            // color: #191716!important;
+        }
+    }
+}
+
+// Media Queries
+@media screen and (min-width:776px){
+    .service-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+
+        row-gap: 1em;
+        column-gap: 1em;
+
+        // Changing the position of the articles
+
+        .service-item:nth-of-type(1){
+            order: 1;
+        }
+
+        .service-item:nth-of-type(2){
+            order: 2;
+        }
+
+        .service-item:nth-of-type(3){
+            order: 4;
+        }
+
+        .service-item:nth-of-type(4){
+            order: 3;
+        }
+
+        .service-item:nth-of-type(5){
+            order: 5;
+        }
+
+        .service-item:nth-of-type(6){
+            order: 6;
+        }
+    }
+}
+
+// Media Queries
+@media screen and (min-width:375px){
+    .service-container{
+        .back-text{
+            height: 110%;
+            bottom: -15em;
+        }
+    }
+}
+
+// For plans
+#plans{
+    .underline-plans{
+        width: 160px;
+        height: .4rem;
+    }
+}
+
+// For carousel
+#carousel{
+
+    .underline-carousel{
+        width: 120px;
+        height: .4rem;
+    }
+
+}
+
+// reviews
+#reviews{
+    .underline-review{
+        width: 120px;
+        height: .4rem;
+    }
+
+    .button-container{
+        .prev-btn,.next-btn{
+            //Transparent color in CSS makes background elements visible from another top element of the page.
+            border-color: transparent;
+            background-color: transparent;
+    
+            color: hsl(205, 90%, 76%);
+            cursor: pointer;
+            
+            // transition:property duration
+            // transition-timing-function:linear - specifies a transition effect with the same speed from start to end.
+            transition: all 0.3s linear;
+    
+            font-size: 2rem;
+
+            // margin:top & bottom left & right
+            margin: 0 0.5rem;
+        }
+    }
+}
+
+// Team Section
+#team{
+    .underline-team{
+        width: 250px;
+        height: .4rem;
+    }
+
+    .image{
+        width: 20%;
+        height: 7rem;
+    
+        // The CSS object-fit property is used to specify how an <img> or <video> should be resized to fit its container.
+        // This property tells the content to fill the container in a variety of ways; such as "preserve that aspect ratio" or "stretch up and take up as much space as possible".
+        object-fit: cover;
+    
+        border-radius: 70%;
+        margin-top: -40px;
+        margin-left: 40%;
+    
+        /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+        position: relative;
+    }
+}
+
+// Our Work
+#achievements{
+    .underline-work{
+        width: 170px;
+        height: .4rem;
+    }
+}
+
+// For Blog Section
+#blog{
+    padding-top: 20px;
+    padding-bottom: 80px;
+
+    .underline-blog{
+        width: 170px;
+        height: .4rem;
+    }
+
+    .blogs-container{
+        max-width: 90vw;
+        margin: auto;
+
+        .blog-item{
+            /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+            position: relative;
+
+            overflow: hidden;
+
+            margin: 10px;
+
+            // Default : Moves from Top to Bottom
+            background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+
+            color: whitesmoke;
+
+            img{
+                min-height: 100%;
+                width: 100%;
+
+                // Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width.
+                display: block;
+
+                // transition:property duration
+                transition: transform 4s;
+            }
+
+            .blogs-text{
+                /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+                position: absolute;
+
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+
+                // transition:property duration
+                transition: opacity 4s;
+
+                // The opacity-level describes the transparency-level.
+                opacity: 0;
+            }
+
+            .blogs-footer{
+                /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+                position: absolute;
+
+                // Convert column into row
+                display: flex;
+
+                // On X-axis
+                justify-content: space-between;
+
+                bottom: 0;
+                left: 0;
+                font-size: 1.2rem;
+                color: $greyColor;
+
+                // transition:propert duration
+                transition: opacity 4s;
+
+                // The opacity-level describes the transparency-level.
+                opacity: 0;
+
+                width: 100%;
+            }
+        }
+
+        .blog-item:hover{
+
+            img{
+                // The opacity-level describes the transparency-level.
+                opacity: 0.4;
+
+                transform: scale(1.2);
+            }
+
+            .blogs-text{
+                // The opacity-level describes the transparency-level.
+                opacity: 1;
+            }
+            .blogs-footer{
+                // The opacity-level describes the transparency-level.
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// Media Queries
+@media screen and (min-width:576px){
+    .blogs-container{
+        // Convert row into column
+        display: grid;
+
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1rem;
+    }
+}
+
+// Media Queries
+@media screen and (min-width:997px){
+    .blogs-container{
+        // Convert row into column
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 1rem;
+    }
+}
+
+// For common questions
+// hsl-hue,saturation and lightness
+
+#queries{
+    .underline-queries{
+        width: 330px;
+        height: .4rem;
+    }
+
+    background-color: hsl(210, 36%, 96%);
+    color: hsl(209, 61%, 16%);
+
+    p{
+        margin-bottom: 1.25rem;
+        color:hsl(210, 22%, 49%) ;
+    }
+
+    .list-of-questions{
+        // Convert row into column
+        display: grid;
+
+        //The CSS place-items shorthand property allows you to align items along both the block and inline directions at once (i.e. the align-items and justify-items properties) in a relevant layout system such as Grid or Flexbox.     
+        place-items: center;
+
+        margin-top: 5vh;
+
+        .question-section{
+            max-width: 620px;
+    
+            .question{
+                background-color: white;
+                border-radius: 0.5rem;
+
+                // box-shadow:<offset-x> <offset-y> <blur-radius>
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+                margin-bottom: 2rem;
+    
+                // padding:top right bottom left
+                padding: 1.5rem 1.5rem 0 1.5rem;
+    
+                .question-title{
+                    // convert column into row
+                    display: flex;
+    
+                    // On X-axis
+                    justify-content: space-between;
+    
+                    // On Y-axis
+                    align-items: center;
+    
+                    padding-bottom: 1rem;
+
+                    p{
+                        margin-bottom: 0;
+                        letter-spacing: 0.25rem;
+                        color: hsl(209, 61%, 16%);
+                    }
+    
+                    .question-button{
+                        font-size: 1.5rem;
+    
+                        //Transparent color in CSS makes background elements visible from another top element of the page.
+                        background-color: transparent;
+                        border-color: transparent;
+    
+                        color: #C59D5F;
+
+                        // transition: Default Value Duration
+                        //transition-timing-function:linear - specifies a transition effect with the same speed from start to end.
+                        transition: all 0.3s linear;
+
+                        cursor: pointer;
+                    }
+    
+                    .question-button:hover{
+                        transform: rotate(90deg);
+                    }
+                }
+
+                .answer-title{
+                    // padding:top right bottom left
+                    padding: 1rem 0 1.5rem 0;
+    
+                    // border-top:size style color
+                    border-top: 1px solid rgba(0,0,0,0.2);
+    
+                    p{
+                        margin-bottom: 0;
+                    }
+                }  
+            }        
+        }    
+    }       
+}
+
+.minus-icon,.answer-title{
+    display: none;
+}
+
+// Added the .show-answer class using JS
+.show-answer{
+    .answer-title{
+        // Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width.
+        display: block;
+    }
+
+    .plus-icon{
+        display: none;
+    }
+
+    .minus-icon{
+        /* the default for span */
+        display: inline;
+    }
+}
+
+// For Contact Section
+#contact{
+    .underline-contact{
+        width: 100px;
+        height: .4rem;
+    }
+}
+
+footer{
+    .underline-footer{
+        width: 100px;
+        height: .4rem;
+    }
+}
